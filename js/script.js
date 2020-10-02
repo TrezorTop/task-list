@@ -17,6 +17,9 @@ $(document).ready(function(){
     function CreateTaskListItem(title, text) { 
         $('.empty-list').remove();
 
+        // ->> TODO
+        // ->> ВЫНЕСТИ ОТДЕЛЬНО В ФУНКЦИЮ (отрисовка DOM контента из массива arrayOfTasks)
+
         var createListTaskContainer = $('<div></div').addClass('list-task-container').attr("id", `${arrayOfTasks.length}`);
         $('.task-list').append(createListTaskContainer);
 
@@ -35,6 +38,9 @@ $(document).ready(function(){
         $(createHr).after(createTaskText); 
 
         $('.list-task-container').fadeIn(200);
+
+        // ВЫНЕСТИ ОТДЕЛЬНО В ФУНКЦИЮ <--
+        // TODO <--
 
         arrayOfTasks.push({id: arrayOfTasks.length, title: title.val(), text: text.val(), containerHeight: $(createListTaskContainer).height()});
 
