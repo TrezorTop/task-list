@@ -10,7 +10,7 @@ $(document).ready(function(){
 
         CreateTaskListItem(title, text);
 
-        $('.delete-btn').click(DeleteTaskListItem);
+        $('.delete-btn').off('click').click(DeleteTaskListItem);
         $('.close-btn').off('click').click(CloseAndOpenTask);
     });
 
@@ -36,13 +36,22 @@ $(document).ready(function(){
 
         $('.list-task-container').fadeIn(200);
 
+        arrayOfTasks.push({id: arrayOfTasks.length, title: title.val(), text: text.val(), containerHeight: $(createListTaskContainer).height()});
+
         title.val('');
         text.val('');
-
-        arrayOfTasks.push({id: arrayOfTasks.length, title: title.val(), text: text.val(), containerHeight: $(createListTaskContainer).height()});
     }
 
     function DeleteTaskListItem(){
+        let currentId = $(this).parent().parent().attr('id');
+
+        var i = -1;
+        while(++i < arrayOfTasks.length) {
+            if(arrayOfTasks[i].id == currentId) arrayOfTasks.splice(i--, 1);
+        }
+
+        console.log(arrayOfTasks);
+
         $(this).parent().parent().fadeOut(200, function(){
             $(this).remove();
         });
@@ -59,7 +68,15 @@ $(document).ready(function(){
         }
         else if ($(this).hasClass('open-btn')) {
             let currentId = $(this).parent().parent().attr('id');
-            let dynamicHeight = $(arrayOfTasks[currentId].containerHeight);
+
+            console.log(currentId);
+            
+            var i = -1;
+            while(++i < arrayOfTasks.length) {
+                if(arrayOfTasks[i].id == currentId) {
+                    var dynamicHeight = $(arrayOfTasks[i].containerHeight);
+                }
+            }
 
             $(this).parent().parent().animate({
                 'height': `${dynamicHeight[0]}px`,
