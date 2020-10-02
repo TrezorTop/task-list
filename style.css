@@ -1,0 +1,152 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+}
+
+.task-list, .new-task {
+    margin: 0 10px;
+    width: 470px;
+}
+
+main h2 {
+    font-size: 21px;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+main {
+    display: flex;
+    margin: 65px auto;
+    width: fit-content;
+}
+
+.new-task-container {
+    background-color: #fff;
+    padding: 48px 40px;
+}
+
+.input-container h5 {
+    font-weight: normal;
+    font-size: 14px;
+    color: #8993ad;
+}
+
+input, textarea {
+    resize: none;
+    border: 1px solid #ebebeb;
+    background-color: #f9f9f9;
+    width: 377px;
+    height: 45px;
+    font-size: 16px;
+    padding: 0 13px;
+    margin-top: 11px;
+    word-wrap: break-word;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+}
+
+.input-container {
+    margin-bottom: 28px;
+}
+
+textarea {
+    height: 230px;
+    padding-top: 20px;
+}
+
+button {
+    background-color: #2174fd;
+    border: none;
+    color: white;
+    width: 224px;
+    height: 55px;
+    font-size: 16px;
+    transition: ease-in-out 125ms;
+}
+
+button:hover {
+    background-color: unset;
+    border: 1px solid #2174fd;
+    color: #2174fd;
+}
+
+button:focus {
+    outline: none;
+}
+
+button:active {
+    background-color: #2174fd;
+    color: white;
+}
+
+button:disabled {
+    background-color: #8a8a8a;
+    border: none;
+    color: white;
+}
+
+
+.list-task-container {
+    display: none;
+    margin-bottom: 20px;
+    background-color: #fff;
+    padding: 18px 20px;
+}
+
+.list-task-container h4 {
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.toolbar {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.delete-btn {
+    display: flex;
+    margin-left: 22px;
+    width: 12px;
+    height: 12px;
+}
+
+.close-btn {
+    display: flex;
+    margin-left: auto;
+    width: 10px;
+    height: 10px;
+    transition: ease 250ms;
+    transform: rotate(180deg);
+}
+
+.open-btn {
+    display: flex;
+    margin-left: auto;
+    width: 10px;
+    height: 10px;
+    transition: ease 250ms;
+}
+
+hr {
+    border-collapse: collapse;
+    border: 0.5px solid #f7f7f7;
+}
+
+.list-task-container p{
+    margin-top: 10px;
+    font-size: 14px;
+    color: #8993ad;
+}
+
+.empty-list {
+    margin-top: 80px;
+    color: #8993ad;
+}
