@@ -39,9 +39,6 @@ $(document).ready(function(){
 
         $('.list-task-container').fadeIn(200);
 
-        // ВЫНЕСТИ ОТДЕЛЬНО В ФУНКЦИЮ <--
-        // TODO <--
-
         arrayOfTasks.push({id: arrayOfTasks.length, title: title.val(), text: text.val(), containerHeight: $(createListTaskContainer).height()});
 
         title.val('');
@@ -74,8 +71,6 @@ $(document).ready(function(){
         }
         else if ($(this).hasClass('open-btn')) {
             let currentId = $(this).parent().parent().attr('id');
-
-            console.log(currentId);
             
             var i = -1;
             while(++i < arrayOfTasks.length) {
